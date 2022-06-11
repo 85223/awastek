@@ -2,21 +2,25 @@ import classes from "./Information.module.sass";
 import { Mock } from "../../mock/mock";
 import antd, { Radio, Space, Badge, Table } from "antd";
 import type { ColumnsType } from "antd/lib/table";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import Layout from "../Layout";
 
 interface Props {
   data: Mock[];
   setCurrentValue: React.Dispatch<React.SetStateAction<Mock[] | any>>;
+  setDataNumber: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const Information = ({ data, setCurrentValue }: Props) => {
+const Information = ({ data, setCurrentValue, setDataNumber }: Props) => {
   const newData = data.map((object, id) => {
     return { ...object, key: id };
   });
 
   const [selectionType] = useState<"checkbox" | "radio">("checkbox");
-
+  useEffect(() => {
+    console.log(data.length);
+    setDataNumber(data.length);
+  }, []);
   const columns = [
     {
       title: "Status",

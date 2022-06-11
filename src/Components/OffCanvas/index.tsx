@@ -4,9 +4,10 @@ import { Mock } from "../../mock/mock";
 
 interface Props {
   currentValue?: Mock[];
+  dataNumber: number;
 }
 
-const OffCanvas = ({ currentValue }: Props) => {
+const OffCanvas = ({ currentValue, dataNumber }: Props) => {
   const [icon, SetIcon] = useState(classes.toggler);
   const [active, setActive] = useState(classes.container);
 
@@ -25,6 +26,10 @@ const OffCanvas = ({ currentValue }: Props) => {
   return (
     <div className={classes.root}>
       <div className={active}>
+        {currentValue === undefined ||
+          (currentValue.length === 0 && (
+            <div className={classes.dataNumber}>資料總數： {dataNumber} </div>
+          ))}
         {currentValue?.map((item, id) => (
           <div key={id} className={classes.selectData}>
             <div>{item.name}</div>

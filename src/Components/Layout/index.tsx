@@ -10,9 +10,10 @@ import { Mock } from "../../mock/mock";
 interface Props {
   children: ReactNode;
   currentValue?: Mock[];
+  dataNumber: number;
 }
 
-const Layout = ({ children, currentValue }: Props) => {
+const Layout = ({ children, currentValue, dataNumber }: Props) => {
   return (
     <div className={classes.layout}>
       <Aside />
@@ -21,7 +22,7 @@ const Layout = ({ children, currentValue }: Props) => {
 
         <div className={classes.content}>
           <main className={classes.main}>{children}</main>
-          <OffCanvas currentValue={currentValue} />
+          <OffCanvas currentValue={currentValue} dataNumber={dataNumber} />
         </div>
       </div>
     </div>

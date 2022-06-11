@@ -6,10 +6,15 @@ import { useEffect, useState } from "react";
 
 const AnsWer = () => {
   const [currentValue, setCurrentValue] = useState<Mock[]>();
+  const [dataNumber, setDataNumber] = useState<number>(0);
   useEffect(() => console.log(currentValue), [currentValue]);
   return (
-    <Layout currentValue={currentValue}>
-      <Information data={mockData} setCurrentValue={setCurrentValue} />
+    <Layout currentValue={currentValue} dataNumber={dataNumber}>
+      <Information
+        data={mockData}
+        setCurrentValue={setCurrentValue}
+        setDataNumber={setDataNumber}
+      />
     </Layout>
   );
 };
