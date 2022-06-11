@@ -11,9 +11,17 @@ interface Props {
   children: ReactNode;
   currentValue?: Mock[];
   dataNumber: number;
+  setTogglerEl: React.Dispatch<React.RefObject<HTMLDivElement>>;
+  // eact.Dispatch<React.SetStateAction<React.RefObject<HTMLDivElement>
+  // React.Dispatch<React.SetStateAction<number>>;
 }
 
-const Layout = ({ children, currentValue, dataNumber }: Props) => {
+const Layout = ({
+  children,
+  currentValue,
+  dataNumber,
+  setTogglerEl,
+}: Props) => {
   return (
     <div className={classes.layout}>
       <Aside />
@@ -22,7 +30,11 @@ const Layout = ({ children, currentValue, dataNumber }: Props) => {
 
         <div className={classes.content}>
           <main className={classes.main}>{children}</main>
-          <OffCanvas currentValue={currentValue} dataNumber={dataNumber} />
+          <OffCanvas
+            currentValue={currentValue}
+            dataNumber={dataNumber}
+            setTogglerEl={setTogglerEl}
+          />
         </div>
       </div>
     </div>

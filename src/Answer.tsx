@@ -8,12 +8,20 @@ const AnsWer = () => {
   const [currentValue, setCurrentValue] = useState<Mock[]>();
   const [dataNumber, setDataNumber] = useState<number>(0);
   useEffect(() => console.log(currentValue), [currentValue]);
+  const [togglerEl, setTogglerEl] = useState<
+    React.RefObject<HTMLDivElement> | undefined
+  >();
   return (
-    <Layout currentValue={currentValue} dataNumber={dataNumber}>
+    <Layout
+      currentValue={currentValue}
+      dataNumber={dataNumber}
+      setTogglerEl={setTogglerEl}
+    >
       <Information
         data={mockData}
         setCurrentValue={setCurrentValue}
         setDataNumber={setDataNumber}
+        togglerEl={togglerEl}
       />
     </Layout>
   );
