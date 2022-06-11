@@ -1,0 +1,48 @@
+
+ .container
+    width: 200px
+    height: calc( 100vh - 80px  )
+    background: #ff0000   
+    position: relative
+    right: 0
+    transform: translateX(100%)
+    display: none
+
+.root
+    position: relative
+.selectData
+    margin-bottom: 1px
+
+.toggler
+    display: block
+    cursor: pointer
+    position: absolute
+    right:  0.5rem
+    top: 0.5rem
+
+.toggler 
+    div 
+        width: 2.5rem
+        height: 0.2rem
+        margin: 0.4rem
+        background: #000000aa
+        transition: 0.3s ease-in
+
+
+.active
+    transform: translateX(0%)
+    background: #cccfd2
+    display: block
+
+
+/* Toggle Icon Animation */
+.toggle 
+    left: 0px
+    .line1 
+        transform: rotate(-45deg) translate(-6px, 7px)
+    .line2 
+        opacity: 0
+    .line3 
+        transform: rotate(45deg) translate(-6px, -7px)
+
+
