@@ -26,8 +26,8 @@ const OffCanvas = ({ currentValue, dataNumber, setTogglerEl }: Props) => {
     } else SetIcon(classes.toggler);
   };
 
-  useEffect(() => console.log("currentValue", currentValue), [currentValue]);
-  useEffect(() => console.log(dataNumber), [dataNumber]);
+  //   useEffect(() => console.log("currentValue", currentValue), [currentValue]);
+  //   useEffect(() => console.log(dataNumber), [dataNumber]);
   useEffect(() => setTogglerEl(toggler), []);
   return (
     <div className={classes.root}>

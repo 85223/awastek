@@ -24,7 +24,7 @@ const Information = ({
 
   const [selectionType] = useState<"checkbox" | "radio">("checkbox");
   useEffect(() => {
-    console.log(data.length);
+    // console.log(data.length);
     setDataNumber(data.length);
   }, []);
   const columns = [
@@ -45,11 +45,11 @@ const Information = ({
   // rowSelection object indicates the need for row selection
   const rowSelection = {
     onChange: (selectedRowKeys: React.Key[], selectedRows: Mock[]) => {
-      console.log(
-        `selectedRowKeys: ${selectedRowKeys}`,
-        "selectedRows: ",
-        selectedRows
-      );
+      // console.log(
+      //   `selectedRowKeys: ${selectedRowKeys}`,
+      //   "selectedRows: ",
+      //   selectedRows
+      // );
       setCurrentValue(selectedRows);
     },
     getCheckboxProps: (record: Mock) => ({
@@ -70,7 +70,7 @@ const Information = ({
         onRow={(record, rowIndex) => {
           return {
             onDoubleClick: (event) => {
-              console.log("onDoubleClick");
+              // console.log("onDoubleClick");
               togglerEl?.current?.click();
             }, // click row
           };
