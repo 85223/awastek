@@ -66,6 +66,7 @@ const Information = ({
           type: selectionType,
           ...rowSelection,
         }}
+        rowClassName={classes.rowHover}
         onRow={(record, rowIndex) => {
           return {
             onDoubleClick: (event) => {
